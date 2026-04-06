@@ -4,7 +4,7 @@ import com.anhtester.driver.DriverManager;
 import com.anhtester.driver.TargetFactory;
 import com.anhtester.projects.website.cms.pages.CommonPageCMS;
 import com.anhtester.projects.website.cms.pages.LoginPage;
-import com.anhtester.utils.LogUtils;
+// import com.anhtester.utils.LogUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ThreadGuard;
 

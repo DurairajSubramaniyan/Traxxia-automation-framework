@@ -24,18 +24,61 @@ public class LoginSteps {
         WebUI.openWebsite(url);
     }
 
+    // Common login step
     @When("user enter email {string} password {string}")
-    public void userEnterEmailPasswordAndClickLoginButton(String email, String password) {
-        commonPageCMS = loginPage.loginCMS(email, password);
+    public void userEnterEmailPassword(String email, String password) {
+        loginPage.enterEmail(email);
+        loginPage.enterPassword(password);
     }
 
     @And("click Login button")
     public void clickLoginButton() {
+        loginPage.clickLoginButton();
     }
 
+    //  Success case
     @Then("user is redirected to the Dashboard page")
-    public void userIsRedirectedToTheDashboardPage() {
+    public void userIsRedirectedToDashboardPage() {
         commonPageCMS.verifyDashboardPageDisplays();
     }
 
+    //  Invalid credentials
+    @Then("error message {string} should be displayed")
+    public void errorMessageShouldBeDisplayed(String message) {
+    loginPage.verifyLoginFailedPopup(message);
+    loginPage.clickTryAgain(); 
+}
+
+    //  Empty email & password
+    @When("user leave email and password fields empty")
+    public void userLeaveEmailAndPasswordFieldsEmpty() {
+        loginPage.enterEmail("");
+        loginPage.enterPassword("");
+    }
+
+    //  Empty password
+    @When("user enter email {string} and leave password field empty")
+    public void userEnterEmailAndLeavePassword(String email) {
+        loginPage.enterEmail(email);
+        loginPage.enterPassword("");
+    }
+
+    //  Empty email
+    @When("user leave email field empty and enter password {string}")
+    public void userLeaveEmailAndEnterPassword(String password) {
+        loginPage.enterEmail("");
+        loginPage.enterPassword(password);
+    }
+
+    //  Validation message
+    @Then("validation message {string} should be displayed")
+    public void validationMessageShouldBeDisplayed(String message) {
+        loginPage.verifyValidationMessage(message);
+    }
+
+    //  Case sensitivity check
+    @Then("user should be logged in successfully")
+    public void userShouldBeLoggedInSuccessfully() {
+        commonPageCMS.verifyDashboardPageDisplays();
+    }
 }

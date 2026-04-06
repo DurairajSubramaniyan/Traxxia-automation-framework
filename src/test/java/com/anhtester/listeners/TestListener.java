@@ -1,10 +1,10 @@
 package com.anhtester.listeners;
 
 import com.anhtester.annotations.FrameworkAnnotation;
-import com.anhtester.constants.FrameworkConstants;
+// import com.anhtester.constants.FrameworkConstants;
 import com.anhtester.driver.DriverManager;
 import com.anhtester.enums.AuthorType;
-import com.anhtester.enums.Browser;
+// import com.anhtester.enums.Browser;
 import com.anhtester.enums.CategoryType;
 import com.anhtester.helpers.CaptureHelpers;
 import com.anhtester.helpers.PropertiesHelpers;
@@ -18,8 +18,8 @@ import com.anhtester.mail.EmailManager;
 import com.anhtester.utils.LogUtils;
 import com.anhtester.utils.ZipUtils;
 import com.aventstack.extentreports.Status;
-import com.github.automatedowl.tools.AllureEnvironmentWriter;
-import com.google.common.collect.ImmutableMap;
+// import com.github.automatedowl.tools.AllureEnvironmentWriter;
+// import com.google.common.collect.ImmutableMap;
 import org.testng.*;
 
 import java.awt.*;
@@ -95,22 +95,22 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
         //Send mail
         EmailManager.sendEmail(count_totalTCs, count_passedTCs, count_failedTCs, count_skippedTCs);
 
-        //Write information in Allure Report
-        AllureEnvironmentWriter.allureEnvironmentWriter(
-                ImmutableMap.<String, String>builder().
-                        put("Test URL", FrameworkConstants.URL_CRM).
-                        put("Target Execution", FrameworkConstants.TARGET).
-                        put("Global Timeout", String.valueOf(FrameworkConstants.WAIT_DEFAULT)).
-                        put("Page Load Timeout", String.valueOf(FrameworkConstants.WAIT_PAGE_LOADED)).
-                        put("Headless Mode", FrameworkConstants.HEADLESS).
-                        put("Local Browser", String.valueOf(Browser.CHROME)).
-                        put("Remote URL", FrameworkConstants.REMOTE_URL).
-                        put("Remote Port", FrameworkConstants.REMOTE_PORT).
-                        put("TCs Total", String.valueOf(count_totalTCs)).
-                        put("TCs Passed", String.valueOf(count_passedTCs)).
-                        put("TCs Skipped", String.valueOf(count_skippedTCs)).
-                        put("TCs Failed", String.valueOf(count_failedTCs)).
-                        build());
+        // //Write information in Allure Report
+        // AllureEnvironmentWriter.allureEnvironmentWriter(
+        //         ImmutableMap.<String, String>builder().
+        //                 put("Test URL", FrameworkConstants.URL_CRM).
+        //                 put("Target Execution", FrameworkConstants.TARGET).
+        //                 put("Global Timeout", String.valueOf(FrameworkConstants.WAIT_DEFAULT)).
+        //                 put("Page Load Timeout", String.valueOf(FrameworkConstants.WAIT_PAGE_LOADED)).
+        //                 put("Headless Mode", FrameworkConstants.HEADLESS).
+        //                 put("Local Browser", String.valueOf(Browser.CHROME)).
+        //                 put("Remote URL", FrameworkConstants.REMOTE_URL).
+        //                 put("Remote Port", FrameworkConstants.REMOTE_PORT).
+        //                 put("TCs Total", String.valueOf(count_totalTCs)).
+        //                 put("TCs Passed", String.valueOf(count_passedTCs)).
+        //                 put("TCs Skipped", String.valueOf(count_skippedTCs)).
+        //                 put("TCs Failed", String.valueOf(count_failedTCs)).
+        //                 build());
         
 
     }

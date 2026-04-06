@@ -1,8 +1,8 @@
-@regression
+
 Feature: Login Test CMS
 
    Background: Navigate to Login page for Admin
-      Given User navigate to Login Page for Admin "https://frontend-f2lm.onrender.com/login"
+      Given User navigate to Login Page for Admin "https://trax-qa-app-cdeeceg5bxf2bmf4.centralus-01.azurewebsites.net/login"
 
   
    Scenario: Login success
@@ -10,7 +10,7 @@ Feature: Login Test CMS
       And click Login button
       Then user is redirected to the Dashboard page
 
-   
+   @regression
    Scenario: Login with invalid password
       When user enter email "admin@traxxia.com" password "Wrong@123"
       And click Login button
@@ -44,6 +44,6 @@ Feature: Login Test CMS
    Scenario: Login with case sensitivity check
       When user enter email "ADMIN@TRAXXIA.COM" password "Admin@123"
       And click Login button
-      hen user should be logged in successfully
+      Then Start to type your Then step herehen user should be logged in successfully
 
    
