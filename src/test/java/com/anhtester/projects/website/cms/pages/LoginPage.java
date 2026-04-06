@@ -5,9 +5,9 @@ import org.openqa.selenium.By;
 
 public class LoginPage {
 
-    private By inputEmail = By.xpath("//input[@id='email']");
-    private By inputPassword = By.xpath("//input[@id='password']");
-    private By buttonLogin = By.xpath("//button[normalize-space()='Login']");
+    private By inputEmail = By.xpath("//input[@type='email']");
+    private By inputPassword = By.xpath("//input[@type='password']");
+    private By buttonLogin = By.xpath("//button[@type='submit']");
     private By buttonCopy = By.xpath("//button[normalize-space()='Copy']");
 
     public CommonPageCMS loginCMS(String email, String password) {
