@@ -23,6 +23,10 @@ public class LoginSteps {
     public void userNavigateToLoginPageForAdmin(String url) {
         WebUI.openWebsite(url);
     }
+    @Then("welcome message should be displayed")
+    public void welcomeMessageShouldBeDisplayed() {
+    loginPage.verifyWelcomeMessage();
+}
 
     // Common login step
     @When("user enter email {string} password {string}")
@@ -39,7 +43,7 @@ public class LoginSteps {
     //  Success case
     @Then("user is redirected to the Dashboard page")
     public void userIsRedirectedToDashboardPage() {
-        commonPageCMS.verifyDashboardPageDisplays();
+        loginPage.verifyDashboardPage();
     }
 
     //  Invalid credentials
@@ -63,6 +67,16 @@ public class LoginSteps {
         loginPage.enterPassword("");
     }
 
+    @Then("validation message {string} should be displayed for empty password")
+    public void validationMessageShouldBeDisplayedforPassword(String expectedMessage) {
+    loginPage.verifyValidationPasswordMessage(expectedMessage);
+    }
+
+   @Then("validation message {string} should be displayed for empty email")
+    public void validationMessageShouldBeDisplayed(String expectedMessage) {
+    loginPage.verifyValidationEmailMessage(expectedMessage);
+   }
+   
     //  Empty email
     @When("user leave email field empty and enter password {string}")
     public void userLeaveEmailAndEnterPassword(String password) {
@@ -71,10 +85,10 @@ public class LoginSteps {
     }
 
     //  Validation message
-    @Then("validation message {string} should be displayed")
-    public void validationMessageShouldBeDisplayed(String message) {
-        loginPage.verifyValidationMessage(message);
-    }
+    @Then("validation message should be displayed")
+    public void validationMessageShouldBeDisplayed() {
+    loginPage.verifyValidationMessages();
+}
 
     //  Case sensitivity check
     @Then("user should be logged in successfully")

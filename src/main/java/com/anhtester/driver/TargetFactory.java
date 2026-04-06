@@ -8,7 +8,7 @@ package com.anhtester.driver;
 import com.anhtester.constants.FrameworkConstants;
 import com.anhtester.enums.Target;
 import com.anhtester.exceptions.TargetNotValidException;
-import com.anhtester.helpers.PropertiesHelpers;
+// import com.anhtester.helpers.PropertiesHelpers;
 import com.anhtester.utils.LogUtils;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
