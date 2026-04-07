@@ -1,0 +1,31 @@
+TC ID,Feature Area,Test Case Description,Preconditions,Steps,Expected Result,Type
+TC001,Login,Verify user can login with valid email and password,User account exists and application is reachable,"1. Open login page
+2. Enter valid email and password
+3. Click login",User is redirected to dashboard,Positive
+TC002,Business Selection,Verify user can select existing business United from business list,User is logged in and business list is loaded,"1. Click Businesses menu
+2. Select business United",United business is opened and dashboard loads,Positive
+TC003,Execution Navigation,Verify user can open Execution menu and see Priorities option,User is on business dashboard,"1. Click Execution menu",Priorities option is visible,Positive
+TC004,Priorities Section,Verify user can open Priorities section from Execution menu,Execution menu open and Priorities option visible,"1. Click Priorities",Priorities page opens with priority cards visible,Positive
+TC005,Priority Selection,Verify user can select the first available priority checkbox,Priorities page displayed with at least one priority,"1. Select first priority checkbox",Checkbox is selected,Positive
+TC006,Kickstart Projects,Verify Kickstart Projects button works after a priority is selected,At least one priority checkbox is selected,"1. Click Kickstart Projects",Collaborator warning popup appears or project kickstart flows,Positive
+TC007,Collaborator Warning,Verify Add Collaborators First option is shown on warning popup, Kickstart Projects clicked for business without collaborators,"1. Click Kickstart Projects
+2. Select Add Collaborators First",Add Collaborators page opens,Positive
+TC008,Add Collaborators Page,Verify Add Collaborators page displays after selecting Add Collaborators First,Warning popup displayed,"1. Select Add Collaborators First",Add Collaborators page is displayed,Positive
+TC009,Kickstart to Projects,Verify Kickstart to Projects option works and opens Projects page or success popup,Warning popup displayed,"1. Select Kickstart to Projects",Projects page or success popup appears,Positive
+TC010,Repeat Priority Kickstart,Verify second priority kickstart does not show warning popup if collaborators already added,Business has collaborators added after first kickstart,"1. Open Priorities
+2. Select another priority
+3. Click Kickstart Projects",No collaborator warning popup shown,Positive
+TC011,Invalid Login,Verify application rejects invalid login credentials,Application is reachable,"1. Open login page
+2. Enter invalid email or password
+3. Click login",Login fails and error message displays,Negative
+TC012,Missing Business,Verify error is handled when selected business does not exist,User is logged in,"1. Attempt to select a non-existent business from list",System reports business not found or test fails gracefully,Negative
+TC013,No Priorities,Verify behavior when no priorities exist for a business,Business dashboard open and no priorities are available,"1. Attempt to open Priorities section",User sees a no priorities message or action is disabled,Negative
+TC014,No Selection Kickstart,Verify Kickstart Projects cannot run without selecting a priority,Priorities page open with priorities visible,"1. Do not select any priority
+2. Click Kickstart Projects",Kickstart Projects button is disabled or warning appears,Negative
+TC015,Unexpected Popup Option,Verify system handles when collaborator warning popup options are missing,Collaborator popup should appear,"1. Click Kickstart Projects
+2. Check popup buttons",System handles missing options gracefully or reports error,Negative
+TC016,Business Filter Persistence,Verify business list retains selection after refresh or reopen,Business list loaded,"1. Select a business
+2. Refresh page or reopen list",Selected business remains active or list reloads correctly,Edge
+TC017,Priority Checkbox State,Verify selected priority remains checked after page refresh,Priority selected,"1. Refresh page
+2. Check selected priority state",Priority remains selected or user is warned to reselect,Edge
+TC018,Popup Dismissal,Verify warning popup can be dismissed without action,Collaborator warning popup displayed,"1. Close or dismiss popup",Popup closes and user stays on Priorities page,Negative

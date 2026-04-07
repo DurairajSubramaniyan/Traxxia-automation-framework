@@ -3,7 +3,9 @@ package com.anhtester.common;
 import com.anhtester.keywords.WebUI;
 import com.anhtester.projects.website.crm.pages.Clients.ClientPageCRM;
 import com.anhtester.projects.website.crm.pages.Dashboard.DashboardPageCRM;
+import com.anhtester.projects.website.crm.pages.KickstartPageCRM;
 import com.anhtester.projects.website.crm.pages.Projects.ProjectPageCRM;
+import com.anhtester.projects.website.crm.pages.RegisterPageCRM;
 import com.anhtester.projects.website.crm.pages.SignIn.SignInPageCRM;
 import org.openqa.selenium.By;
 
@@ -13,6 +15,8 @@ public class CommonPageCRM {
     public DashboardPageCRM dashboardPage;
     public ClientPageCRM clientPage;
     public ProjectPageCRM projectPage;
+    public RegisterPageCRM registerPage;
+    public KickstartPageCRM kickstartPage;
 
     public By dropdownAccount = By.xpath("//a[@id='user-dropdown']//span[2]");
     public By buttonSignOut = By.xpath("//a[normalize-space()='Sign Out']");
@@ -51,4 +55,17 @@ public class CommonPageCRM {
         return projectPage;
     }
 
+    public RegisterPageCRM getRegisterPage() {
+        if (registerPage == null) {
+            registerPage = new RegisterPageCRM();
+        }
+        return registerPage;
+    }
+
+    public KickstartPageCRM getKickstartPage() {
+        if (kickstartPage == null) {
+            kickstartPage = new KickstartPageCRM();
+        }
+        return kickstartPage;
+    }
 }
