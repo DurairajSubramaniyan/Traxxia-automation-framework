@@ -2,6 +2,7 @@ package com.anhtester.common;
 
 import com.anhtester.keywords.WebUI;
 import com.anhtester.projects.traxxia.pages.KickstartPage;
+import com.anhtester.projects.traxxia.pages.LaunchProjectPage;
 import com.anhtester.projects.traxxia.pages.LoginPage;
 import com.anhtester.projects.traxxia.pages.RegisterPage;
 import org.openqa.selenium.By;
@@ -11,6 +12,7 @@ public class TraxxiaPageManager {
     private LoginPage loginPage;
     private RegisterPage registerPage;
     private KickstartPage kickstartPage;
+    private LaunchProjectPage launchProjectPage;
 
     private final By dropdownAccount = By.xpath("//a[@id='user-dropdown']//span[2]");
     private final By buttonSignOut = By.xpath("//a[normalize-space()='Sign Out']");
@@ -40,5 +42,12 @@ public class TraxxiaPageManager {
             kickstartPage = new KickstartPage();
         }
         return kickstartPage;
+    }
+
+    public LaunchProjectPage getLaunchProjectPage() {
+        if (launchProjectPage == null) {
+            launchProjectPage = new LaunchProjectPage();
+        }
+        return launchProjectPage;
     }
 }

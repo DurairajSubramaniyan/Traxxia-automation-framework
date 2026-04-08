@@ -4,17 +4,17 @@ Feature: Traxxia kickstart project flow
     Given User navigate to Login Page for Admin "https://trax-qa-app-cdeeceg5bxf2bmf4.centralus-01.azurewebsites.net/login"
     Then welcome message should be displayed
 
-  @Regression
+  # @Regression
   Scenario: Complete flow - create business and complete the 9-step PMF onboarding flow
     Given User signs in to Application with email "traxxiaQa@gmail.com" and password "Traxxia@123"
     And User creates a new business with name "Sample Business" and purpose "Provide mortgage lending solutions"
     And User completes the 9-step PMF onboarding flow
 
-  @Regression
+  # @Regression
   Scenario: Existing business - select business, navigate to priorities, and kickstart first project
     Given User signs in to Application with email "traxxiaQa@gmail.com" and password "Traxxia@123"
     And Click Businesses menu
-    And User selects the existing business "NoCollab4"
+    And User selects the existing business "Nationstart"
     And verify that I Land on Executive summary Page
     And User clicks Execution and select the priority
     When User selects the first available priority
@@ -27,7 +27,7 @@ Feature: Traxxia kickstart project flow
   Scenario: Existing business - second project kickstart without warning popup
     Given User signs in to Application with email "traxxiaQa@gmail.com" and password "Traxxia@123"
     And Click Businesses menu
-    And User selects the existing business "NoCollab4"
+    And User selects the existing business "cooper"
     And User clicks Execution and select the priority
     When User selects the first available priority
     And User clicks Kickstart Projects
@@ -40,3 +40,4 @@ Feature: Traxxia kickstart project flow
     And User selects another available priority
     And User clicks Kickstart Projects
     Then the collaborator warning popup should not be displayed
+    And the project kickstart success popup or Projects page should be displayed

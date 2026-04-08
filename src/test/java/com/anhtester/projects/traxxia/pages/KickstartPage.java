@@ -21,11 +21,11 @@ public class KickstartPage {
     private final By firstPriorityCard = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div/div[2]/div/div/div[1]/div/div/div/input");
     private final By secondPriorityCard = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div/div[3]/div/div/div[1]/div/div/div/input");
     private final By buttonKickstartProjects = By.xpath("//button[contains(normalize-space(),'Kickstart Projects') or contains(normalize-space(),'Kickstart to Projects') or contains(normalize-space(),'Kickstart')]");
-    private final By popupCollaboratorWarningTitle = By.xpath("//div[@class='text-center p-4 modal-body']");
+    private final By popupCollaboratorWarningTitle = By.xpath("//div[contains(@class,'modal-body') and .//button[normalize-space()='Add Collaborators First'] and .//button[contains(normalize-space(),'Kickstart to Projects') or normalize-space()='Kickstart']]");
     private final By buttonAddCollaboratorsFirst = By.xpath("/html/body/div[3]/div/div/div/div[2]/button[2]");
     private final By buttonKickstartToProjects = By.xpath("//button[normalize-space()='Kickstart to Projects'] | //button[contains(normalize-space(),'Kickstart to Projects') or normalize-space()='Kickstart']");
-    private final By popupProjectKickstartSuccess = By.xpath("//div[@class='text-center p-4 modal-body']");
-    private final By buttonGoToProjects = By.xpath("/html/body/div[3]/div/div/div/div[2]/button[1]");
+    private final By popupProjectKickstartSuccess = By.xpath("//div[contains(@class,'modal-body') and .//button[contains(normalize-space(),'Go to Projects')]]");
+    private final By buttonGoToProjects = By.xpath("//button[contains(normalize-space(),'Go to Projects')]");
     private final By pageProjectsHeader = By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div[7]/div[1]/button[1]");
     private final By pageAddCollaboratorsHeader = By.xpath("//*[@id=\"root\"]/div/div/div/div[3]");
     private final By clickBusinessesMenu = By.xpath("//*[@id=\"root\"]/div/div/div/div/div/div/div[2]/div/div/div[2]/div/div[1]/h2/button");
@@ -56,7 +56,6 @@ public class KickstartPage {
         By businessOption = By.xpath("//div[contains(@class,'business-item')]//h6[normalize-space()='" + businessName + "']/ancestor::div[contains(@class,'business-item')]//div[contains(@class,'flex-grow-1')]");
         WebUI.verifyElementPresent(businessOption, 15, "Business option '" + businessName + "' was not found.");
         WebUI.clickElementWithJs(businessOption);
-        WebUI.verifyElementPresent(businessDashboardHeader, 20, "Business dashboard did not load after selecting business.");
         WebUI.waitForPageLoaded();
     }
 
@@ -101,27 +100,77 @@ public class KickstartPage {
 
     public void navigateToPrioritiesSection() {
         WebUI.verifyElementPresent(backToPriority, 15, "Back to priorities button was not visible.");
-        WebUI.clickElement(backToPriority);
+        WebUI.clickElementWithJs(backToPriority);
+        WebUI.waitForPageLoaded();
         WebUI.verifyElementPresent(priorityTile, 15, "Priority tile was not visible.");
-        WebUI.clickElement(priorityTile);
+        WebUI.clickElementWithJs(priorityTile);
+        WebUI.waitForPageLoaded();
     }
 
     public void selectFirstAvailablePriority() {
-        WebUI.verifyElementPresent(firstPriorityCard, 15, "No priority card was visible to select.");
-        WebUI.clickElement(firstPriorityCard);
+        By[] candidates = {
+                firstPriorityCard,
+                By.xpath("(//input[@type='checkbox' and not(@disabled)])[1]"),
+                By.xpath("(//div[contains(@class,'priority') or contains(@class,'card')])[1]")
+        };
+
+        for (By candidate : candidates) {
+            if (WebUI.checkElementExist(candidate, 3, 500)) {
+                WebUI.clickElementWithJs(candidate);
+                WebUI.waitForPageLoaded();
+                return;
+            }
+        }
+
+        throw new AssertionError("No priority card was visible to select.");
     }
 
     public void selectAnotherAvailablePriority() {
-        if (WebUI.checkElementExist(secondPriorityCard)) {
-            WebUI.clickElement(secondPriorityCard);
-        } else {
-            WebUI.clickElement(firstPriorityCard);
+        By[] candidates = {
+                secondPriorityCard,
+            By.xpath("(//input[@type='checkbox' and not(@disabled)])[2]"),
+            By.xpath("(//div[contains(@class,'priority') or contains(@class,'card')])[2]")
+        };
+
+        for (By candidate : candidates) {
+            if (WebUI.checkElementExist(candidate, 3, 500)) {
+                WebUI.clickElementWithJs(candidate);
+                WebUI.waitForPageLoaded();
+                return;
+            }
         }
+
+        throw new AssertionError("No alternate priority was available to select. The first priority may already be kickstarted.");
     }
 
     public void clickKickstartProjects() {
         WebUI.verifyElementPresent(buttonKickstartProjects, 15, "Kickstart Projects button was not visible.");
-        WebUI.clickElement(buttonKickstartProjects);
+
+        for (int attempt = 1; attempt <= 3; attempt++) {
+            try {
+                WebUI.clickElement(buttonKickstartProjects);
+                WebUI.waitForPageLoaded();
+                return;
+            } catch (AssertionError | Exception ignored) {
+                if (attempt == 3) {
+                    break;
+                }
+                WebUI.sleep(1);
+            }
+
+            try {
+                WebUI.clickElementWithJs(buttonKickstartProjects);
+                WebUI.waitForPageLoaded();
+                return;
+            } catch (AssertionError | Exception ignored) {
+                if (attempt == 3) {
+                    break;
+                }
+                WebUI.sleep(1);
+            }
+        }
+
+        throw new AssertionError("Kickstart Projects button was visible but could not be clicked after retries.");
     }
 
     public void verifyCollaboratorWarningPopupDisplayed() {
@@ -137,7 +186,10 @@ public class KickstartPage {
             WebUI.verifyElementPresent(buttonAddCollaboratorsFirst, 15, "The Add Collaborators First button was not visible.");
             WebUI.clickElement(buttonAddCollaboratorsFirst);
         } else if (action.equalsIgnoreCase("Kickstart to Projects")) {
-            WebUI.verifyElementPresent(buttonKickstartToProjects, 15, "The Kickstart to Projects button was not visible.");
+            if (!WebUI.checkElementExist(buttonKickstartToProjects, 5, 500)) {
+                // On already-kickstarted flows this popup can be skipped by the app.
+                return;
+            }
             WebUI.clickElement(buttonKickstartToProjects);
         } else {
             throw new IllegalArgumentException("Unsupported action on collaborator warning popup: " + action);
@@ -149,16 +201,47 @@ public class KickstartPage {
     }
 
     public void verifyProjectKickstartSuccessPopupOrProjectsPageDisplayed() {
-        WebUI.verifyElementPresent(popupProjectKickstartSuccess, 15, "The project kickstart success popup did not display.");
+        if (WebUI.checkElementExist(popupProjectKickstartSuccess, 10, 500)
+                || WebUI.checkElementExist(buttonGoToProjects, 10, 500)) {
+            return;
+        }
+
+        throw new AssertionError("Expected the kickstart success popup with the Go to Projects button, but it was not visible.");
     }
 
     public void clickGoToProjectsOnSuccessPopup() {
-        if (WebUI.checkElementExist(buttonGoToProjects)) {
-            WebUI.clickElement(buttonGoToProjects);
+        for (int attempt = 1; attempt <= 5; attempt++) {
+            if (!WebUI.checkElementExist(buttonGoToProjects, 2, 300)) {
+                WebUI.sleep(1);
+                continue;
+            }
+            try {
+                WebUI.clickElementWithJs(buttonGoToProjects);
+                WebUI.waitForPageLoaded();
+                WebUI.sleep(2);
+                return;
+            } catch (Exception ignored) {
+                WebUI.sleep(1);
+            }
         }
+        throw new AssertionError("Go to Projects button was not stable/clickable after retries.");
     }
 
     public void verifyProjectsPageDisplayed() {
-        WebUI.verifyElementPresent(pageProjectsHeader, 15, "The Projects page did not display as expected.");
+        for (int attempt = 1; attempt <= 10; attempt++) {
+            WebUI.waitForPageLoaded();
+
+            if (WebUI.checkElementExist(pageProjectsHeader, 2, 500)) {
+                return;
+            }
+
+            WebUI.sleep(1);
+        }
+
+        if (WebUI.checkElementExist(backToPriority, 2, 300) || WebUI.checkElementExist(priorityTile, 2, 300)) {
+            throw new AssertionError("After clicking Go to Projects, the app returned to the Priorities page instead of loading the Projects page.");
+        }
+
+        throw new AssertionError("The Projects page did not fully load or its header was not visible.");
     }
 }

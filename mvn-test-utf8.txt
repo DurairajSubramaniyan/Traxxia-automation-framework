@@ -1,0 +1,278 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------< com.anhtester:traxxia-automation-framework >-------------
+[INFO] Building TraxxiaAutomationFramework 1.8.7
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ traxxia-automation-framework ---
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ traxxia-automation-framework ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 50 source files with javac [debug target 17] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ traxxia-automation-framework ---
+[INFO] Copying 19 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ traxxia-automation-framework ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 15 source files with javac [debug target 17] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ traxxia-automation-framework ---
+[INFO] Using auto detected provider org.apache.maven.surefire.testng.TestNGProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.anhtester.runners.TraxxiaTestRunner
+[INFO] 08-04-2026 17:57:43 [LogUtils] - ================ BEFORE ALL ================
+[INFO] 08-04-2026 17:57:43 [LogUtils] - Loaded all properties files.
+[INFO] 08-04-2026 17:57:43 [LogUtils] - {TARGET=local, extent.reporter.spark.prefix.device=@device_, DELETE_TEMP_FOLDER=no, TELEGRAM_CHATID=, OVERRIDE_REPORTS=yes, screenshot.rel.path=/exports/reports/CucumberExtentReports/images/, SEND_REPORT_TO_TELEGRAM=no, SEND_EMAIL_TO_USERS=no, ZIP_FOLDER_NAME=CucumberExtentReports.zip, WAIT_DEFAULT=5, REMOTE_PORT=4444, screenshot.dir=exports/reports/CucumberExtentReports/images/, TELEGRAM_TOKEN=, extent.reporter.spark.prefix.author=@author_, extent.reporter.spark.enable.device=true, EXTENT_REPORT_PDF=PdfReport.pdf, URL_TRAXXIA=https://trax-qa-app-cdeeceg5bxf2bmf4.centralus-01.azurewebsites.net/login, VIDEO_RECORD=no, PASSWORD=T+wyT5u9cOelDJbBWNgxLw, SCREENSHOT_ALL_STEPS=no, EXTENT_REPORT_NAME=TraxxiaExtentReport, extent.reporter.spark.start=true, EXPORT_VIDEO_PATH=exports/ExportData/Videos, EXPORT_CAPTURE_PATH=exports/ExportData/Images, WAIT_PAGE_LOADED=40, SCREENSHOT_PASSED_STEPS=no, EXTENT_REPORT_FOLDER=exports/reports/CucumberExtentReports, WAIT_EXPLICIT=10, BROWSER=chrome, REPORT_TITLE=Traxxia Automation Report, AUTHOR=Traxxia QA Team, EXCEL_DATA_FILE_PATH=src/test/resources/testdata/ClientsDataExcel.xlsx, WAIT_IMPLICIT=20, PROJECT_NAME=Traxxia Automation Framework, extent.reporter.spark.out=exports/reports/CucumberExtentReports/CucumberExtentReports.html, extent.reporter.pdf.start=false, extent.reporter.excel.out=exports/reports/ExcelReport/ExtentExcel.xlsx, HEADLESS=false, REMOTE_URL=localhost, extent.reporter.spark.vieworder=dashboard,test,category,author,device,log,exception, extent.reporter.pdf.out=exports/reports/CucumberExtentReports/CucumberExtentPdfReport.pdf, SCREENSHOT_FAILED_STEPS=yes, SCREENSHOT_ALL_STEPS_DETAIL=no, TXT_FILE_PATH=src/test/resources/testdata/TxtFileData.txt, extent.reporter.excel.start=false, extent.reporter.spark.enable.author=true, JSON_DATA_FILE_PATH=src/test/resources/testdata/JsonData.json, ACTIVE_PAGE_LOADED=true, WAIT_SLEEP_STEP=0, OPEN_REPORTS_AFTER_EXECUTION=no, ZIP_FOLDER_PATH=exports/reports/CucumberExtentReports, extent.reporter.spark.base64imagesrc=true, LOCATE=en, ZIP_FOLDER=no}
+[INFO] 08-04-2026 17:57:45 [LogUtils] - Loaded all properties files.
+[INFO] 08-04-2026 17:57:45 [LogUtils] - {TARGET=local, extent.reporter.spark.prefix.device=@device_, DELETE_TEMP_FOLDER=no, TELEGRAM_CHATID=, OVERRIDE_REPORTS=yes, screenshot.rel.path=/exports/reports/CucumberExtentReports/images/, SEND_REPORT_TO_TELEGRAM=no, SEND_EMAIL_TO_USERS=no, ZIP_FOLDER_NAME=CucumberExtentReports.zip, WAIT_DEFAULT=5, REMOTE_PORT=4444, screenshot.dir=exports/reports/CucumberExtentReports/images/, TELEGRAM_TOKEN=, extent.reporter.spark.prefix.author=@author_, extent.reporter.spark.enable.device=true, EXTENT_REPORT_PDF=PdfReport.pdf, URL_TRAXXIA=https://trax-qa-app-cdeeceg5bxf2bmf4.centralus-01.azurewebsites.net/login, VIDEO_RECORD=no, PASSWORD=T+wyT5u9cOelDJbBWNgxLw, SCREENSHOT_ALL_STEPS=no, EXTENT_REPORT_NAME=TraxxiaExtentReport, extent.reporter.spark.start=true, EXPORT_VIDEO_PATH=exports/ExportData/Videos, EXPORT_CAPTURE_PATH=exports/ExportData/Images, WAIT_PAGE_LOADED=40, SCREENSHOT_PASSED_STEPS=no, EXTENT_REPORT_FOLDER=exports/reports/CucumberExtentReports, WAIT_EXPLICIT=10, BROWSER=chrome, REPORT_TITLE=Traxxia Automation Report, AUTHOR=Traxxia QA Team, EXCEL_DATA_FILE_PATH=src/test/resources/testdata/ClientsDataExcel.xlsx, WAIT_IMPLICIT=20, PROJECT_NAME=Traxxia Automation Framework, extent.reporter.spark.out=exports/reports/CucumberExtentReports/CucumberExtentReports.html, extent.reporter.pdf.start=false, extent.reporter.excel.out=exports/reports/ExcelReport/ExtentExcel.xlsx, HEADLESS=false, REMOTE_URL=localhost, extent.reporter.spark.vieworder=dashboard,test,category,author,device,log,exception, extent.reporter.pdf.out=exports/reports/CucumberExtentReports/CucumberExtentPdfReport.pdf, SCREENSHOT_FAILED_STEPS=yes, SCREENSHOT_ALL_STEPS_DETAIL=no, TXT_FILE_PATH=src/test/resources/testdata/TxtFileData.txt, extent.reporter.excel.start=false, extent.reporter.spark.enable.author=true, JSON_DATA_FILE_PATH=src/test/resources/testdata/JsonData.json, ACTIVE_PAGE_LOADED=true, WAIT_SLEEP_STEP=0, OPEN_REPORTS_AFTER_EXECUTION=no, ZIP_FOLDER_PATH=exports/reports/CucumberExtentReports, extent.reporter.spark.base64imagesrc=true, LOCATE=en, ZIP_FOLDER=no}
+Allure environment data saved.
+Allure Reports is installed.
+
+@Regression
+Scenario: Existing business - second project kickstart without warning popup                                                # src/test/resources/features/traxxia/kickstart-project.feature:27
+mvn : Apr 08, 2026 5:58:02 PM org.openqa.selenium.devtools.CdpVersionFinder 
+findNearestMatch
+At line:1 char:1
++ mvn --batch-mode --no-transfer-progress test "-Dtest=TraxxiaTestRunne ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Apr 08, 2026 5:...indNearestMatch 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+WARNING: Unable to find an exact match for CDP version 146, returning the 
+closest version; found: 143; Please update to a Selenium version that supports 
+CDP version 146
+[INFO] 08-04-2026 17:58:03 [LogUtils] - Running Scenario Name: Existing business - second project kickstart without warning popup
+[INFO] 08-04-2026 17:58:15 [LogUtils] - Open website with URL: https://trax-qa-app-cdeeceg5bxf2bmf4.centralus-01.azurewebsites.net/login
+  ? Given User navigate to Login Page for Admin "https://trax-qa-app-cdeeceg5bxf2bmf4.centralus-01.azurewebsites.net/login" # com.anhtester.common.CommonSteps.userNavigateToLoginPageForAdmin(java.lang.String)
+[INFO] 08-04-2026 17:58:16 [LogUtils] - Verify element present By.xpath: //*[contains(normalize-space(),'Welcome') or contains(normalize-space(),'Sign In') or contains(normalize-space(),'Login')]
+  ? Then welcome message should be displayed                                                                                # com.anhtester.common.CommonSteps.welcomeMessageShouldBeDisplayed()
+[INFO] 08-04-2026 17:58:20 [LogUtils] - Set text traxxiaQa@gmail.com on By.xpath: //input[@type='email' or contains(@name,'email') or contains(@id,'email')]
+[INFO] 08-04-2026 17:58:21 [LogUtils] - Set text Traxxia@123 on By.xpath: //input[@type='password' or contains(@name,'password') or contains(@id,'password')]
+[INFO] 08-04-2026 17:58:26 [LogUtils] - Clicked on the element By.xpath: //button[@type='submit' or normalize-space()='Login' or normalize-space()='Sign In']
+  ? Given User signs in to Application with email "traxxiaQa@gmail.com" and password "Traxxia@123"                          # com.anhtester.projects.traxxia.stepdefinitions.KickstartSteps.userSignsInToApplicationWithEmailAndPassword(java.lang.String,java.lang.String)
+[INFO] 08-04-2026 17:58:32 [LogUtils] - Verify element present By.xpath: //*[@id="root"]/div/div/div/div/div/div/div[2]/div/div/div[2]/div/div[1]/h2/button
+[INFO] 08-04-2026 17:58:35 [LogUtils] - Clicked on the element By.xpath: //*[@id="root"]/div/div/div/div/div/div/div[2]/div/div/div[2]/div/div[1]/h2/button
+  ? And Click Businesses menu                                                                                               # com.anhtester.projects.traxxia.stepdefinitions.KickstartSteps.clickBusinessesMenu()
+[INFO] 08-04-2026 17:58:38 [LogUtils] - Verify element present By.xpath: //div[contains(@class,'business-item')]//h6[normalize-space()='cooper']/ancestor::div[contains(@class,'business-item')]//div[contains(@class,'flex-grow-1')]
+[INFO] 08-04-2026 17:58:39 [LogUtils] - Click on element with JS: By.xpath: //div[contains(@class,'business-item')]//h6[normalize-space()='cooper']/ancestor::div[contains(@class,'business-item')]//div[contains(@class,'flex-grow-1')]
+[INFO] 08-04-2026 17:58:40 [LogUtils] - Verify element present By.xpath: //*[contains(normalize-space(),'AHA INSIGHTS') or contains(normalize-space(),'Executive Summary') or contains(normalize-space(),'Where to Compete')]
+  ? And User selects the existing business "cooper"                                                                         # com.anhtester.projects.traxxia.stepdefinitions.KickstartSteps.userSelectsTheExistingBusiness(java.lang.String)
+[INFO] 08-04-2026 17:58:40 [LogUtils] - Verify element present By.xpath: //button[contains(@class,'nav-dropdown-trigger') and normalize-space()='Execution']
+[INFO] 08-04-2026 17:58:41 [LogUtils] - Clicked on the element By.xpath: //button[contains(@class,'nav-dropdown-trigger') and normalize-space()='Execution']
+[INFO] 08-04-2026 17:58:43 [LogUtils] - Clicked on the element By.xpath: //button[contains(@class,'dropdown-item') and normalize-space()='Priorities']
+  ? And User clicks Execution and select the priority                                                                       # com.anhtester.projects.traxxia.stepdefinitions.KickstartSteps.userClicksExecutionAndSelectThePriority()
+[INFO] 08-04-2026 17:58:44 [LogUtils] - Kh⌠ng t∞m th?y ph?n t?. Th? l?i l?n 1
+[INFO] 08-04-2026 17:58:45 [LogUtils] - Kh⌠ng t∞m th?y ph?n t?. Th? l?i l?n 2
+[INFO] 08-04-2026 17:58:46 [LogUtils] - T∞m th?y ph?n t? ? l?n th? th? 3
+[INFO] 08-04-2026 17:58:46 [LogUtils] - Click on element with JS: By.xpath: //*[@id="root"]/div/div[2]/div/div/div/div/div[2]/div/div/div[2]/div/div/div[1]/div/div/div/input
+  ? When User selects the first available priority                                                                          # com.anhtester.projects.traxxia.stepdefinitions.KickstartSteps.userSelectsTheFirstAvailablePriority()
+[INFO] 08-04-2026 17:58:47 [LogUtils] - Verify element present By.xpath: //button[contains(normalize-space(),'Kickstart Projects') or contains(normalize-space(),'Kickstart to Projects') or contains(normalize-space(),'Kickstart')]
+[ERROR] 08-04-2026 17:58:57 [LogUtils] - ? Timeout waiting for the element ready to click. By.xpath: //button[contains(normalize-space(),'Kickstart Projects') or contains(normalize-space(),'Kickstart to Projects') or contains(normalize-space(),'Kickstart')]
+[INFO] 08-04-2026 17:59:00 [LogUtils] - Click on element with JS: By.xpath: //button[contains(normalize-space(),'Kickstart Projects') or contains(normalize-space(),'Kickstart to Projects') or contains(normalize-space(),'Kickstart')]
+  ? And User clicks Kickstart Projects                                                                                      # com.anhtester.projects.traxxia.stepdefinitions.KickstartSteps.userClicksKickstartProjects()
+[ERROR] 08-04-2026 17:59:16 [LogUtils] - The collaborator warning popup did not appear.
+  ? Then the collaborator warning popup should be displayed                                                                 # com.anhtester.projects.traxxia.stepdefinitions.KickstartSteps.theCollaboratorWarningPopupShouldBeDisplayed()
+        java.lang.AssertionError: The collaborator warning popup did not appear.
+        	at org.testng.Assert.fail(Assert.java:111)
+        	at com.anhtester.keywords.WebUI.verifyElementPresent(WebUI.java:1841)
+        	at com.anhtester.projects.traxxia.pages.KickstartPage.verifyCollaboratorWarningPopupDisplayed(KickstartPage.java:178)
+        	at com.anhtester.projects.traxxia.stepdefinitions.KickstartSteps.theCollaboratorWarningPopupShouldBeDisplayed(KickstartSteps.java:72)
+        	at ?.the collaborator warning popup should be displayed(file:///C:/Users/durai/Traxxia-automation-framework/src/test/resources/features/traxxia/kickstart-project.feature:34)
+
+        Embedding Screenshot failed step [image/png 69918 bytes]
+
+  ? When User chooses "Kickstart to Projects" on the collaborator warning popup                                             # com.anhtester.projects.traxxia.stepdefinitions.KickstartSteps.userChoosesOnTheCollaboratorWarningPopup(java.lang.String)
+  ? Then the project kickstart success popup or Projects page should be displayed                                           # com.anhtester.projects.traxxia.stepdefinitions.KickstartSteps.theProjectKickstartSuccessPopupOrProjectsPageShouldBeDisplayed()
+  ? And click Go to Projects on the success popup                                                                           # com.anhtester.projects.traxxia.stepdefinitions.KickstartSteps.clickGoToProjectsOnTheSuccessPopup()
+  ? And the Projects page should be displayed                                                                               # com.anhtester.projects.traxxia.stepdefinitions.KickstartSteps.theProjectsPageShouldBeDisplayed()
+  ? When User navigates to the Priorities section again                                                                     # com.anhtester.projects.traxxia.stepdefinitions.KickstartSteps.userNavigatesToThePrioritiesSectionAgain()
+  ? And User selects another available priority                                                                             # com.anhtester.projects.traxxia.stepdefinitions.KickstartSteps.userSelectsAnotherAvailablePriority()
+  ? And User clicks Kickstart Projects                                                                                      # com.anhtester.projects.traxxia.stepdefinitions.KickstartSteps.userClicksKickstartProjects()
+  ? Then the collaborator warning popup should not be displayed                                                             # com.anhtester.projects.traxxia.stepdefinitions.KickstartSteps.theCollaboratorWarningPopupShouldNotBeDisplayed()
+  ? And the project kickstart success popup or Projects page should be displayed                                            # com.anhtester.projects.traxxia.stepdefinitions.KickstartSteps.theProjectKickstartSuccessPopupOrProjectsPageShouldBeDisplayed()
+[INFO] 08-04-2026 17:59:25 [LogUtils] - ================ AFTER ALL ================
+[INFO] 08-04-2026 17:59:25 [LogUtils] - Zipped C:\Users\durai\Traxxia-automation-framework\target\allure-results successfully !!
+[INFO] 08-04-2026 17:59:27 [LogUtils] - ****************************************
+[INFO] 08-04-2026 17:59:27 [LogUtils] - Send Email - START
+[INFO] 08-04-2026 17:59:27 [LogUtils] - ****************************************
+[INFO] 08-04-2026 17:59:27 [LogUtils] - File name: C:\Users\durai\Traxxia-automation-framework\exports/reports/CucumberExtentReports\TraxxiaExtentReport.html
+[INFO] 08-04-2026 17:59:27 [LogUtils] - count_totalTCs: 1
+[INFO] 08-04-2026 17:59:27 [LogUtils] - count_passedTCs: 0
+[INFO] 08-04-2026 17:59:27 [LogUtils] - count_failedTCs: 1
+[INFO] 08-04-2026 17:59:27 [LogUtils] - count_skippedTCs: 0
+javax.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not 
+accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 
+98e67ed59e1d1-35dd36a1d04sm27087168a91.17 - gsmtp
+
+	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.ja
+va:965)
+	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:876)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:780)
+	at javax.mail.Service.connect(Service.java:388)
+	at javax.mail.Service.connect(Service.java:246)
+	at javax.mail.Service.connect(Service.java:195)
+	at javax.mail.Transport.send0(Transport.java:254)
+	at javax.mail.Transport.send(Transport.java:124)
+	at com.anhtester.mail.EmailAttachmentsSender.sendEmailWithAttachments(EmailAtt
+achmentsSender.java:84)
+	at com.anhtester.mail.EmailManager.sendEmail(EmailManager.java:37)
+	at com.anhtester.hooks.Hooks.after_all(Hooks.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native 
+Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethod
+AccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Delegati
+ngMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invokeStatic(Invoker.java:80)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition
+.java:45)
+	at io.cucumber.java.JavaStaticHookDefinition.execute(JavaStaticHookDefinition.
+java:49)
+	at io.cucumber.core.runner.Runner.executeHook(Runner.java:111)
+	at io.cucumber.core.runner.Runner.lambda$executeHooks$2(Runner.java:98)
+	at 
+io.cucumber.core.runner.ThrowableCollector.execute(ThrowableCollector.java:21)
+	at io.cucumber.core.runner.Runner.executeHooks(Runner.java:98)
+	at io.cucumber.core.runner.Runner.runAfterAllHooks(Runner.java:92)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(Rethr
+owingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runAfterAllHooks(Cucumber
+ExecutionContext.java:98)
+	at 
+io.cucumber.testng.TestNGCucumberRunner.finish(TestNGCucumberRunner.java:146)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.tearDownClass(AbstractTestNG
+CucumberTests.java:57)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native 
+Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethod
+AccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Delegati
+ngMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvo
+cationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsidering
+Timeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(Config
+Invoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvok
+er.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassConfiguration
+s(TestMethodWorker.java:238)
+	at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassMethods(TestM
+ethodWorker.java:223)
+	at 
+org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:137)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at 
+org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClas
+s(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDir
+ectoryTestSuite.java:91)
+	at 
+org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBoot
+er.java:385)
+	at 
+org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+[INFO] 08-04-2026 17:59:41 [LogUtils] - count_totalTCs: 1
+[INFO] 08-04-2026 17:59:41 [LogUtils] - count_passedTCs: 0
+[INFO] 08-04-2026 17:59:41 [LogUtils] - count_failedTCs: 1
+[INFO] 08-04-2026 17:59:41 [LogUtils] - count_skippedTCs: 0
+[INFO] 08-04-2026 17:59:41 [LogUtils] - ********* RUN STARTED *********
+[INFO] 08-04-2026 17:59:41 [LogUtils] - ********* RUN FINISHED *********
+???????????????????????????????????????????????????????????????????????????????
+??????
+? Share your Cucumber Report with your team at https://reports.cucumber.io     
+     ?
+? Activate publishing with one of the following:                               
+     ?
+?                                                                              
+     ?
+? src/test/resources/cucumber.properties:          
+cucumber.publish.enabled=true    ?
+? src/test/resources/junit-platform.properties:    
+cucumber.publish.enabled=true    ?
+? Environment variable:                            
+CUCUMBER_PUBLISH_ENABLED=true    ?
+? JUnit:                                           @CucumberOptions(publish = 
+true) ?
+?                                                                              
+     ?
+? More information at https://cucumber.io/docs/cucumber/environment-variables/ 
+     ?
+?                                                                              
+     ?
+? Disable this message with one of the following:                              
+     ?
+?                                                                              
+     ?
+? src/test/resources/cucumber.properties:          cucumber.publish.quiet=true 
+     ?
+? src/test/resources/junit-platform.properties:    cucumber.publish.quiet=true 
+     ?
+???????????????????????????????????????????????????????????????????????????????
+??????
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 139.9 s <<< FAILURE! -- in com.anhtester.runners.TraxxiaTestRunner
+[ERROR] com.anhtester.runners.TraxxiaTestRunner.runScenario["Existing business - second project kickstart without warning popup", "Traxxia kickstart project flow"](1) -- Time elapsed: 98.69 s <<< FAILURE!
+java.lang.AssertionError: The collaborator warning popup did not appear.
+	at org.testng.Assert.fail(Assert.java:111)
+	at com.anhtester.keywords.WebUI.verifyElementPresent(WebUI.java:1841)
+	at com.anhtester.projects.traxxia.pages.KickstartPage.verifyCollaboratorWarningPopupDisplayed(KickstartPage.java:178)
+	at com.anhtester.projects.traxxia.stepdefinitions.KickstartSteps.theCollaboratorWarningPopupShouldBeDisplayed(KickstartSteps.java:72)
+	at ?.the collaborator warning popup should be displayed(file:///C:/Users/durai/Traxxia-automation-framework/src/test/resources/features/traxxia/kickstart-project.feature:34)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   TraxxiaTestRunner.runScenario The collaborator warning popup did not appear.
+[INFO] 
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[ERROR] There are test failures.
+
+See C:\Users\durai\Traxxia-automation-framework\target\test-output for the individual test results.
+See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[INFO] 
+[INFO] --- plugin:5.8.5:generate (generate-cucumber-report) @ traxxia-automation-framework ---
+[INFO] About to generate Cucumber report.
+[INFO] File 'C:\Users\durai\Traxxia-automation-framework\target\cucumber-reports\traxxia-regression.json' contains 1 feature(s)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  03:24 min
+[INFO] Finished at: 2026-04-08T17:59:50+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal net.masterthought:maven-cucumber-reporting:5.8.5:generate (generate-cucumber-report) on project traxxia-automation-framework: Error Found: BUILD FAILED - Check Report For Details -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
