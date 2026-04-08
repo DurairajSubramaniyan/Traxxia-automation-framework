@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Traxxia Automation Suite" parallel="false">
+    <test name="Traxxia Regression">
+        <classes>
+            <class name="com.anhtester.runners.TraxxiaTestRunner"/>
+        </classes>
+    </test>
+</suite>

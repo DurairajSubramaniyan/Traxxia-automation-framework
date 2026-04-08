@@ -1,12 +1,8 @@
-![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Java CI with Maven](https://github.com/anhtester/AutomationFrameworkCucumberTestNG/actions/workflows/maven.yml/badge.svg)](https://github.com/anhtester/AutomationFrameworkCucumberTestNG/actions/workflows/maven.yml)
+## Traxxia Automation Framework
 
-## Test Automation Framework Cucumber TestNG and Selenium Java building by Anh Tester
+Maven-based Selenium + Cucumber + TestNG automation suite focused on the **Traxxia** web application.
 
-### 💥Important: when clone this repo, you should select 'Recursive' to get all submodules
-
-**🌟SOME FEATURES IN FRAMEWORK**
+### 🌟 Framework highlights
 
 1. Run the parallel Scenario on feature file
 2. Cucumber Report

@@ -22,8 +22,8 @@ public interface Configuration extends Config {
     @Key("HEADLESS")
     Boolean HEADLESS();
 
-    @Key("URL_CRM")
-    String URL_CRM();
+    @Key("URL_TRAXXIA")
+    String URL_TRAXXIA();
 
     @Key("REMOTE_URL")
     String REMOTE_URL();

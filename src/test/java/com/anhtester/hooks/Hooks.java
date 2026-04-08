@@ -16,7 +16,9 @@ import com.anhtester.utils.ZipUtils;
 import io.cucumber.java.*;
 import io.qameta.allure.Allure;
 import org.apache.commons.io.FileUtils;
-
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
 import java.io.File;
 import java.io.IOException;
 
@@ -115,6 +117,7 @@ public class Hooks {
 
     @AfterStep
     public void afterStep(Scenario scenario) {
+        waitForPageReady();
         if (scenario.getStatus().equals(Status.PASSED) && SCREENSHOT_PASSED_STEPS.equals(YES)) {
             WebUI.waitForPageLoaded();
             CaptureHelpers.takeScreenshotScenario(scenario,"Screenshot passed step");
@@ -128,5 +131,13 @@ public class Hooks {
             CaptureHelpers.takeScreenshotScenario(scenario,"Screenshot step");
         }
     }
+   private void waitForPageReady() {
+    try {
+        new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(20))
+                .until(driver -> ((JavascriptExecutor) driver)
+                .executeScript("return document.readyState").equals("complete"));
+    } catch (Exception ignored) {
+    }
+}
 
 }

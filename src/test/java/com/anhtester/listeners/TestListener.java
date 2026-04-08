@@ -98,7 +98,7 @@ public class TestListener implements ITestListener, ISuiteListener, IInvokedMeth
         // //Write information in Allure Report
         // AllureEnvironmentWriter.allureEnvironmentWriter(
         //         ImmutableMap.<String, String>builder().
-        //                 put("Test URL", FrameworkConstants.URL_CRM).
+        //                 put("Test URL", FrameworkConstants.URL_TRAXXIA).
         //                 put("Target Execution", FrameworkConstants.TARGET).
         //                 put("Global Timeout", String.valueOf(FrameworkConstants.WAIT_DEFAULT)).
         //                 put("Page Load Timeout", String.valueOf(FrameworkConstants.WAIT_PAGE_LOADED)).

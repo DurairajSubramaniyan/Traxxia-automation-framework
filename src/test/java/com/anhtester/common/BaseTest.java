@@ -11,7 +11,7 @@ import org.testng.annotations.*;
 import java.lang.reflect.Method;
 
 @Listeners({TestListener.class})
-public class BaseTest extends CommonPageCRM {
+public class BaseTest extends TraxxiaPageManager {
 
     @Parameters("BROWSER")
     @BeforeMethod(alwaysRun = true)

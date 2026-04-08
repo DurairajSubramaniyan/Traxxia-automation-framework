@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.anhtester</groupId>
-    <artifactId>anhtester-cucumber-testng</artifactId>
+    <artifactId>traxxia-automation-framework</artifactId>
     <version>1.8.7</version>
-    <name>TestAutomationFrameworkCucumberTestNG</name>
+    <name>TraxxiaAutomationFramework</name>
     <url>https://github.com/anhtester/AutomationFrameworkCucumberTestNG</url>
 
     <properties>
@@ -51,8 +51,7 @@
         <mysql-connector-j.version>9.5.0</mysql-connector-j.version>
 
         <!-- Suite XML path -->
-        <suite.feature>src/test/resources/suites/SuiteFeatureByTag.xml</suite.feature>
-        <suite.feature.login.cms>src/test/resources/suites/SuiteFeatureLoginCMS.xml</suite.feature.login.cms>
+        <suite.feature>src/test/resources/suites/SuiteTraxxia.xml</suite.feature>
     </properties>
 
     <dependencies>
@@ -332,7 +331,7 @@
                         <version>${maven-surefire-plugin.version}</version>
                         <configuration>
                             <suiteXmlFiles>
-                                <suiteXmlFile>${suite.feature.login.cms}</suiteXmlFile>
+                                <suiteXmlFile>${suite.feature}</suiteXmlFile>
                             </suiteXmlFiles>
                         </configuration>
                     </plugin>
@@ -363,7 +362,7 @@
                 <configuration>
                     <suiteXmlFiles>
                         <!-- Call Suite name global set up above -->
-                        <suiteXmlFile>${suite.feature.login.cms}</suiteXmlFile>
+                        <suiteXmlFile>${suite.feature}</suiteXmlFile>
                     </suiteXmlFiles>
 
                     <rerunFailingTestsCount>1</rerunFailingTestsCount>
@@ -405,7 +404,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <projectName>AutomationFrameworkCucumberTestNG</projectName>
+                            <projectName>TraxxiaAutomationFramework</projectName>
                             <skip>false</skip>
                             <outputDirectory>exports/reports/CucumberReports/cucumber-reports
                             </outputDirectory>
