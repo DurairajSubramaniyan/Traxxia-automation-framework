@@ -26,4 +26,7 @@ public class EmailConfig {
 
     public static final String[] TO = {"durairaj.subramaniyan@piquota.com"};
     public static final String SUBJECT = FrameworkConstants.REPORT_TITLE;
+    
+    public static final String[] To = {"lavanya.murugesan@piquota.com"};
+    public static final String Subject = FrameworkConstants.REPORT_TITLE;                               
 }   
