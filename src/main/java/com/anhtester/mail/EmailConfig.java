@@ -21,9 +21,9 @@ public class EmailConfig {
     public static final String SERVER = "smtp.gmail.com";
     public static final String PORT = "587";
 
-    public static final String FROM = "selenium@gmail.com";
-    public static final String PASSWORD = "**********";
+    public static final String FROM = "traxxia.qa.reports@gmail.com";   
+    public static final String PASSWORD = "nqji goqh sefc fpt";
 
-    public static final String[] TO = {"anhtestersharing@gmail.com"};
+    public static final String[] TO = {"durairaj.subramaniyan@piquota.com"};
     public static final String SUBJECT = FrameworkConstants.REPORT_TITLE;
-}
+}   

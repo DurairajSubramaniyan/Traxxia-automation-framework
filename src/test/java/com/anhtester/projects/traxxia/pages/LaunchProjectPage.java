@@ -68,12 +68,16 @@ public class LaunchProjectPage {
             return;
         }
 
+        
         By deleteCollaboratorIcon = By.xpath("(//tr[.//td[normalize-space()='" + businessName + "']]//button[contains(@class,'admin-collab-remove-btn') or @title='Remove Participant' or @title='Remove participant'])[1]");
+        By RemoveParticipant = By.xpath("//button[@class='admin-primary-btn']");
         for (int attempt = 1; attempt <= 5; attempt++) {
             if (!WebUI.checkElementExist(deleteCollaboratorIcon, 2, 300)) {
                 break;
             }
             WebUI.clickElementWithJs(deleteCollaboratorIcon);
+            WebUI.checkElementExist(RemoveParticipant, 5, 500); 
+            WebUI.clickElementWithJs(RemoveParticipant);
             WebUI.waitForPageLoaded();
             WebUI.sleep(1);
 

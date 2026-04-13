@@ -20,7 +20,7 @@ public class EmailManager {
 
     public static void sendEmail(int count_totalTCs, int count_passedTCs, int count_failedTCs, int count_skippedTCs) {
 
-        if (FrameworkConstants.SEND_EMAIL_TO_USERS.trim().equalsIgnoreCase(FrameworkConstants.NO)) {
+        if (FrameworkConstants.SEND_EMAIL_TO_USERS.trim().equalsIgnoreCase(FrameworkConstants.YES)) {
             LogUtils.info("****************************************");
             LogUtils.info("Send Email - START");
             LogUtils.info("****************************************");
