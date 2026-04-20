@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 @Test
 @CucumberOptions(
-        features = "src/test/resources/features/traxxia",
+        features = "src/test/resources/features/traxxia/launch-project.feature",
         glue = {
                 "com.anhtester.common",
                 "com.anhtester.hooks",
@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
         monochrome = true,
-        tags = "@Regression or @regression or @Smoke or @smoke"
+        tags = "@testing"
 )
 
 public class TraxxiaTestRunner extends AbstractTestNGCucumberTests {

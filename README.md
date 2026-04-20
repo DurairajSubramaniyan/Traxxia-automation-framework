@@ -90,6 +90,10 @@ or
 - send_email_to_users=**true** is enable send mail
 - Config mail with email and password in **_src/main/java/anhtester/com/mail/EmailConfig.java_**
 - Note: if Gmail, you use Password App
+- Required: set secrets by environment variables (env-only mode)
+  - `TRAXXIA_EMAIL_FROM` = sender email
+  - `TRAXXIA_EMAIL_PASSWORD` = Gmail App Password
+  - `TRAXXIA_EMAIL_TO` = comma-separated recipients
 
 ![image](https://user-images.githubusercontent.com/87883620/161658851-2aa41091-ac99-45d9-a79f-aaa828052efb.png)
 

@@ -9,6 +9,9 @@ import com.anhtester.constants.FrameworkConstants;
 import com.anhtester.utils.LogUtils;
 
 import javax.mail.MessagingException;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.anhtester.mail.EmailConfig.*;
 
@@ -25,28 +28,74 @@ public class EmailManager {
             LogUtils.info("Send Email - START");
             LogUtils.info("****************************************");
 
-            LogUtils.info("File name: " + FrameworkConstants.getExtentReportFilePath());
+            List<String> attachmentFiles = resolveAttachmentFiles();
 
             String messageBody = getTestCasesCountInFormat(count_totalTCs, count_passedTCs, count_failedTCs,
                     count_skippedTCs);
-            //LogUtils.info(messageBody);
-
-            String attachmentFile_ExtentReport = FrameworkConstants.getExtentReportFilePath();
 
             try {
-                EmailAttachmentsSender.sendEmailWithAttachments(SERVER, PORT, FROM, PASSWORD, TO, SUBJECT, messageBody,
-                        attachmentFile_ExtentReport);
+                EmailAttachmentsSender.sendEmailWithAttachments(
+                        SERVER,
+                        PORT,
+                        FROM,
+                        PASSWORD,
+                        TO,
+                        SUBJECT,
+                        messageBody,
+                        attachmentFiles.toArray(new String[0]));
 
                 LogUtils.info("****************************************");
                 LogUtils.info("Email sent successfully.");
                 LogUtils.info("Send Email - END");
                 LogUtils.info("****************************************");
             } catch (MessagingException e) {
+                LogUtils.error("Unable to send email: " + e.getMessage());
                 e.printStackTrace();
             }
 
         }
 
+    }
+
+    private static List<String> resolveAttachmentFiles() {
+        List<String> attachmentFiles = new ArrayList<>();
+
+        File extentReport = waitForFile(FrameworkConstants.getExtentReportFilePath(), 15, 1000L);
+        if (extentReport != null) {
+            LogUtils.info("Attaching report file: " + extentReport.getAbsolutePath());
+            attachmentFiles.add(extentReport.getAbsolutePath());
+        } else {
+            LogUtils.warn("Extent report file was not available in time: " + FrameworkConstants.getExtentReportFilePath());
+        }
+
+        File allureZip = new File("allure-results.zip");
+        if (allureZip.exists() && allureZip.isFile()) {
+            LogUtils.info("Attaching report file: " + allureZip.getAbsolutePath());
+            attachmentFiles.add(allureZip.getAbsolutePath());
+        }
+
+        return attachmentFiles;
+    }
+
+    private static File waitForFile(String filePath, int maxAttempts, long retryDelayMillis) {
+        File candidate = new File(filePath);
+        for (int attempt = 1; attempt <= maxAttempts; attempt++) {
+            if (candidate.exists() && candidate.isFile() && candidate.length() > 0) {
+                return candidate;
+            }
+
+            if (attempt < maxAttempts) {
+                LogUtils.info("Waiting for report file to be generated: " + candidate.getAbsolutePath() + " (attempt " + attempt + "/" + maxAttempts + ")");
+                try {
+                    Thread.sleep(retryDelayMillis);
+                } catch (InterruptedException interruptedException) {
+                    Thread.currentThread().interrupt();
+                    LogUtils.warn("Interrupted while waiting for report file: " + candidate.getAbsolutePath());
+                    return null;
+                }
+            }
+        }
+        return null;
     }
 
     private static String getTestCasesCountInFormat(int count_totalTCs, int count_passedTCs, int count_failedTCs,

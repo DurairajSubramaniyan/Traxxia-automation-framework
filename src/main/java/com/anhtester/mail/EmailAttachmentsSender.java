@@ -5,8 +5,11 @@
 
 package com.anhtester.mail;
 
+import com.anhtester.utils.LogUtils;
+
 import javax.mail.*;
 import javax.mail.internet.*;
+import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 import java.util.Properties;
@@ -65,12 +68,18 @@ public class EmailAttachmentsSender {
         // adds attachments
         if (attachFiles != null && attachFiles.length > 0) {
             for (String filePath : attachFiles) {
+                File attachmentFile = new File(filePath);
+                if (!attachmentFile.exists() || !attachmentFile.isFile()) {
+                    throw new MessagingException("Attachment file not found: " + attachmentFile.getAbsolutePath());
+                }
+
                 MimeBodyPart attachPart = new MimeBodyPart();
 
                 try {
-                    attachPart.attachFile(filePath);
+                    attachPart.attachFile(attachmentFile);
+                    LogUtils.info("Attached file to email: " + attachmentFile.getAbsolutePath());
                 } catch (IOException ex) {
-                    ex.printStackTrace();
+                    throw new MessagingException("Failed to attach file: " + attachmentFile.getAbsolutePath(), ex);
                 }
 
                 multipart.addBodyPart(attachPart);
