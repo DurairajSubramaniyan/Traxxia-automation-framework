@@ -23,11 +23,20 @@ public class LoginSteps extends TraxxiaPageManager {
         getLoginPage().verifyDashboardPage();
     }
 
+    @Then("I can see the error message {string}")
+    public void errorMessageShouldBeDisplayedForInvalidEmail(String message) {
+        getLoginPage().verifyLoginFailedPopupForInvalidEmail(message);
+        getLoginPage().clickTryAgain();
+    }
+
+
     @Then("error message {string} should be displayed")
     public void errorMessageShouldBeDisplayed(String message) {
         getLoginPage().verifyLoginFailedPopup(message);
         getLoginPage().clickTryAgain();
     }
+
+    
 
     @When("user leave email and password fields empty")
     public void userLeaveEmailAndPasswordFieldsEmpty() {
